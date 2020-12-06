@@ -24,11 +24,11 @@ dependencies:
   flutter:
     sdk: flutter
   equatable: ^1.2.5
-  flutter_bloc: ^6.1.1
   dio: 3.0.10 #latest version
   rxdart: ^0.24.1
   bot_toast: ^3.0.5
   step_progress_indicator: ^0.2.5+8
+  email_validator: '^1.0.5'
 
 
   # The following adds the Cupertino Icons font to your application.

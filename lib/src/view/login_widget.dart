@@ -4,16 +4,16 @@ import 'package:login_component/src/view/ui_component/custom_login_flat_button.d
 import 'package:login_component/src/view/ui_component/custom_logo_image.dart';
 import 'package:login_component/src/view/ui_component/custom_steps_indicator.dart';
 import 'package:login_component/src/view/ui_component/custom_text_field.dart';
-import '../bloc/provider.dart';
+import 'base_screen_widget.dart';
 
 class LoginWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final bloc = Provider.of(context);
+    final bloc = BaseScreenWidget.of(context);
 
-    bloc.authStream.listen((event) {
-      BotToast.showText(text:event);
-    });
+    // bloc.authStream.listen((event) {
+    //   BotToast.showText(text:event);
+    // });
 
     return ListView(
       padding: EdgeInsets.all(30.0),

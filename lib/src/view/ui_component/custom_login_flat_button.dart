@@ -3,6 +3,7 @@ import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:login_component/src/bloc/login_bloc.dart';
+import 'package:login_component/src/view/base_screen_widget.dart';
 
 class CustomFlatButton extends StatelessWidget {
   final LoginBloc _bloc;
@@ -12,12 +13,12 @@ class CustomFlatButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
-      stream: _bloc.credentialStream,
+      stream: _bloc.validationStream,
       builder: (context, snapshot) {
         return FlatButton(
           onPressed: !snapshot.hasData ? null : () {
-            BotToast.showLoading();
-            _bloc.fireRequest();
+            BaseScreenWidget.showLoading();
+            _bloc.login(snapshot.data);
             },
           child: Text("NEXT",),
           color: Colors.black,
